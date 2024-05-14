@@ -6,7 +6,7 @@
 
 1. Clone the repository:
 
-	https://github.com/Nazarudheen/ToDo_App.git
+	https://github.com/Nazarudheen/Rent-N-Drive.git
 
 2. Navigate to the project directory:
 
