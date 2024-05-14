@@ -32,3 +32,7 @@ To run the Django development server, use the following command:
 
 	The server will start at `http://localhost:8000/`.
 
+ #Additional Instructions
+
+To run the project locally, follow the setup instructions mentioned in the README.md file. Make sure you have Python and Django installed on your system. You may need to customize the project settings such as database configuration in the settings.py file. After making changes to the models, run the following command to apply migrations:
+
