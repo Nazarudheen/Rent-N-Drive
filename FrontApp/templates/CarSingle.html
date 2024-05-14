@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="{% static 'front/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'front/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'front/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'front/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'front/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'front/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+  </head>
+  <body>
+
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'IndexPage' %}"><img src="{% static 'front/images/l2.png' %}" width="200px" height="200px"></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item "><a href="{% url 'IndexPage' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item "><a href="{% url 'AboutPage' %}" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="{% url 'ServicePage' %}" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="{% url 'PricePage' %}" class="nav-link">Pricing</a></li>
+	          <li class="nav-item active"><a href="{% url 'CarPage' %}" class="nav-link">Cars</a></li>
+	          <li class="nav-item"><a href="{% url 'BlogPage' %}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'ContactPage' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'front/images/sb.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Car details <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Car Details</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+		<section class="ftco-section ftco-car-details">
+      <div class="container">
+      	<div class="row justify-content-center">
+      		<div class="col-md-12">
+      			<div class="car-details">
+      				<div class="img rounded" style="background-image: url({{data.Image.url}});"></div>
+      				<div class="text text-center">
+      					<span class="subheading">{{data.Brand}}</span>
+      					<h2>{{data.ModelName}}</h2>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="row">
+      		<div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-dashboard"></span></div>
+	              	<div class="text">
+		                <h3 class="heading mb-0 pl-3">
+		                	Mileage
+		                	<span>{{data.Mileage}}</span>
+		                </h3>
+	                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-pistons"></span></div>
+	              	<div class="text">
+		                <h3 class="heading mb-0 pl-3">
+		                	Transmission
+		                	<span>{{data.Transmission}}</span>
+		                </h3>
+	                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car-seat"></span></div>
+	              	<div class="text">
+		                <h3 class="heading mb-0 pl-3">
+		                	Seats
+		                	<span>{{data.Seats}} Adults</span>
+		                </h3>
+	                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-backpack"></span></div>
+	              	<div class="text">
+		                <h3 class="heading mb-0 pl-3">
+		                	Luggage
+		                	<span>{{data.Luggage}} Bags</span>
+		                </h3>
+	                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services">
+              <div class="media-body py-md-4">
+              	<div class="d-flex mb-3 align-items-center">
+	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-diesel"></span></div>
+	              	<div class="text">
+		                <h3 class="heading mb-0 pl-3">
+		                	Fuel
+		                	<span>{{data.Fuel}}</span>
+		                </h3>
+	                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      	</div>
+      	<div class="row">
+      		<div class="col-md-12 pills">
+						<div class="bd-example bd-example-tabs">
+							<div class="d-flex justify-content-center">
+							  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+							    <li class="nav-item">
+							      <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
+							    </li>
+							    <li class="nav-item">
+							      <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+							    </li>
+							    <li class="nav-item">
+							      <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+							    </li>
+							  </ul>
+							</div>
+
+						  <div class="tab-content" id="pills-tabContent">
+						    <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+						    	<div class="row">
+						    		<div class="col-md-4">
+						    			<ul class="features">
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Music</li>
+						    			</ul>
+						    		</div>
+						    		<div class="col-md-4">
+						    			<ul class="features">
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
+						    				<li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
+						    				<li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
+						    			</ul>
+						    		</div>
+						    		<div class="col-md-4">
+						    			<ul class="features">
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Car Kit</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Remote central locking</li>
+						    				<li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
+						    			</ul>
+						    		</div>
+						    	</div>
+						    </div>
+
+						    <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+						      <p>
+"Indulge in luxury and sophistication with our exquisite selection of high-end rental cars. Elevate your travel experience with our premium fleet, featuring top-of-the-line sedans, SUVs, and sports cars from renowned brands.</p>
+									<p> From sleek designs to cutting-edge technology, each vehicle offers unparalleled comfort and style. Whether you're planning a special occasion or simply craving the ultimate driving experience, our luxurious cars promise to exceed your expectations. Treat yourself to the epitome of refinement and elegance on the road with our exclusive rental service."</p>
+						    </div>
+
+						    <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+						      <div class="row">
+							   		<div class="col-md-7">
+							   			<h3 class="head">23 Reviews</h3>
+							   			<div class="review d-flex">
+									   		<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+									   		<div class="desc">
+									   			<h4>
+									   				<span class="text-left">Jacob Webb</span>
+									   				<span class="text-right">14 March 2018</span>
+									   			</h4>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+								   					</span>
+								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+									   			</p>
+									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+									   		</div>
+									   	</div>
+									   	<div class="review d-flex">
+									   		<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+									   		<div class="desc">
+									   			<h4>
+									   				<span class="text-left">Jacob Webb</span>
+									   				<span class="text-right">14 March 2018</span>
+									   			</h4>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+								   					</span>
+								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+									   			</p>
+									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+									   		</div>
+									   	</div>
+									   	<div class="review d-flex">
+									   		<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+									   		<div class="desc">
+									   			<h4>
+									   				<span class="text-left">Jacob Webb</span>
+									   				<span class="text-right">14 March 2018</span>
+									   			</h4>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+								   					</span>
+								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+									   			</p>
+									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+									   		</div>
+									   	</div>
+							   		</div>
+							   		<div class="col-md-5">
+							   			<div class="rating-wrap">
+								   			<h3 class="head">Give a Review</h3>
+								   			<div class="wrap">
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					(98%)
+								   					</span>
+								   					<span>20 Reviews</span>
+									   			</p>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					(85%)
+								   					</span>
+								   					<span>10 Reviews</span>
+									   			</p>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					(70%)
+								   					</span>
+								   					<span>5 Reviews</span>
+									   			</p>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					(10%)
+								   					</span>
+								   					<span>0 Reviews</span>
+									   			</p>
+									   			<p class="star">
+									   				<span>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					<i class="ion-ios-star"></i>
+									   					(0%)
+								   					</span>
+								   					<span>0 Reviews</span>
+									   			</p>
+									   		</div>
+								   		</div>
+							   		</div>
+							   	</div>
+						    </div>
+						  </div>
+						</div>
+		      </div>
+				</div>
+      </div>
+			<div style="text-align:center">
+				<a href="{% url 'BookingPage' %}" class="btn btn-primary py-2 mr-2">Book now</a>
+			</div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt">
+    	<div class="container">
+    		<div class="row justify-content-center">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          	<span class="subheading">Choose Car</span>
+            <h2 class="mb-2">Related Cars</h2>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-4">
+    				<div class="car-wrap rounded ftco-animate">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url({% static 'front/images/car-10.jpg' %});">
+    					</div>
+    					<div class="text">
+    						<h2 class="mb-0"><a href="car-single.html">AMG GT</a></h2>
+    						<div class="d-flex mb-3">
+	    						<span class="cat">Mercedes Benz</span>
+	    						<p class="price ml-auto">$500 <span>/day</span></p>
+    						</div>
+    						<p class="d-flex mb-0 d-block"><a href="{% url 'CarPage' %}" class="btn btn-outline-primary py-2 mr-1" style="margin-left:80px">View More</a>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="car-wrap rounded ftco-animate">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url({% static 'front/images/car-3.jpg' %});">
+    					</div>
+    					<div class="text">
+    						<h2 class="mb-0"><a href="car-single.html">750s</a></h2>
+    						<div class="d-flex mb-3">
+	    						<span class="cat">McLaren</span>
+	    						<p class="price ml-auto">$500 <span>/day</span></p>
+    						</div>
+    						<p class="d-flex mb-0 d-block"><a href="{% url 'CarPage' %}" class="btn btn-outline-primary py-2 mr-1" style="margin-left:80px">View More</a>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="car-wrap rounded ftco-animate">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url({% static 'front/images/Porsche.jpg' %});">
+    					</div>
+    					<div class="text">
+    						<h2 class="mb-0"><a href="car-single.html">911 GT3 </a></h2>
+    						<div class="d-flex mb-3">
+	    						<span class="cat">Porsche</span>
+	    						<p class="price ml-auto">$500 <span>/day</span></p>
+    						</div>
+    						<p class="d-flex mb-0 d-block"><a href="{% url 'CarPage' %}" class="btn btn-outline-primary py-2 mr-1" style="margin-left:80px">View More</a>
+    					</div>
+    				</div>
+    			</div>
+        </div>
+    	</div>
+    </section>
+
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2"><a href="{% url 'IndexPage' %}" class="logo">Rent<span>N</span>Drive</a></h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://twitter.com/?lang=en-in"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/login.php/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/?hl=en"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'AboutPage' %}" class="py-2 d-block">About</a></li>
+                <li><a href="{% url 'ServicePage' %}" class="py-2 d-block">Services</a></li>
+                <li><a href="https://www.websitepolicies.com/blog/sample-privacy-policy-template" class="py-2 d-block">Term and Conditions</a></li>
+                <li><a href="" class="py-2 d-block">Best Price Guarantee</a></li>
+                <li><a href="https://www.websitepolicies.com/blog/sample-privacy-policy-template" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Customer Support</h2>
+              <ul class="list-unstyled">
+                <li><a href="% url 'ContactPage' %}" class="py-2 d-block">FAQ</a></li>
+                <li><a href="#" class="py-2 d-block">Payment Option</a></li>
+                <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
+                <li><a href="#" class="py-2 d-block">How it works</a></li>
+                <li><a href="% url 'ContactPage' %}" class="py-2 d-block">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">203 Vypin Street, Kochi , Kerala, India</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9998887770</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@rentNdrive.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+<!--          <div class="col-md-12 text-center">-->
+
+<!--            <p>&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
+<!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!--  &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>-->
+<!--          </div>-->
+        </div>
+      </div>
+    </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+      <script src="{% static 'front/js/jquery.min.js' %}"></script>
+  <script src="{% static 'front/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'front/js/popper.min.js' %}"></script>
+  <script src="{% static 'front/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'front/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'front/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'front/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'front/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'front/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'front/js/aos.js' %}"></script>
+  <script src="{% static 'front/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'front/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'front/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'front/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'front/js/google-map.js' %}"></script>
+  <script src="{% static 'front/js/main.js' %}"></script>
+
+
+
+
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+{% if messages %}
+    {% for i in messages %}
+        {% if i.tags == 'success' %}
+        <script>
+            swal('{{i}}','','success')
+        </script>
+        {% elif i.tags == 'warning' %}
+        <script>
+            swal('{{i}}','','warning')
+        </script>
+        {% elif i.tags == 'error' %}
+        <script>
+            swal('{{i}}','','error')
+        </script>
+        {% else %}
+        <script>
+            swal('{{i}}','','info')
+        </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+  </body>
+</html>
